@@ -8,38 +8,38 @@ class Product:
 
 
 class Shape(Product):
-    def __init__(self, size, color, brand, price):
-        super(Product, self).__init__(size, color, brand, price)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
 
 class Truck(Product):
-    def __init__(self, size, color, brand, price):
-        super(Product, self).__init__(size, color, brand, price)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
 
 class Wheel(Product):
-    def __init__(self, size, color, brand, price):
-        super(Product, self).__init__(size, color, brand, price)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
 
 class Stock:
     def __init__(self):
         self.shapes = [
-            Shape(8, 'blue', 'celobrands', 50),
-            Shape(8.25, 'blue', 'celobrands', 50),
-            Shape(8, 'green', 'celobrands', 50),
-            Shape(8, 'yellow', 'celobrands', 50),
-            Shape('30mm', 'white', 'celobrands', 50)
+            Shape(size=8, color='blue', brand='celobrands', price=50),
+            Shape(size=8.25, color='blue', brand='celobrands', price=50),
+            Shape(size=8, color='green', brand='celobrands', price=50),
+            Shape(size=8, color='yellow', brand='celobrands', price=50),
+            Shape(size='30mm', color='white', brand='celobrands', price=50)
         ]
         self.trucks = [
-            Truck('139mm', 'black', 'celoco', 60),
-            Truck('139mm', 'pink', 'celoco', 60),
-            Truck('149mm', 'green', 'celoco', 60)
+            Truck(size='139mm', color='black', brand='celoco', price=60),
+            Truck(size='139mm', color='pink', brand='celoco', price=60),
+            Truck(size='149mm', color='green', brand='celoco', price=60)
         ]
         self.wheels = [
-            Wheel('53mm', 'white', 'celobrands',30),
-            Wheel('54mm', 'white', 'celobrands',30),
-            Wheel('55mm', 'white', 'celobrands',30)
+            Wheel(size='53mm', color='white', brand='celobrands', price=30),
+            Wheel(size='54mm', color='white', brand='celobrands', price=30),
+            Wheel(size='55mm', color='white', brand='celobrands', price=30)
         ]
 
     # TODO: Create function to check whether an item exists in stock or not
